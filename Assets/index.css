@@ -1,0 +1,52 @@
+/* My UX Skills section coded using CSS flex */
+.mySkills {
+    display: flex;
+    flex-direction: row; /* You can change this to 'column' if needed */
+    justify-content: space-between;
+}
+
+.flexContainer {
+    display: flex;
+    width: 100%; /* Ensure it takes up the full width of the parent */
+    justify-content: space-between; /* Distribute space between children */
+}
+
+.flexContainer > div {
+    flex: 0 0 calc(33% - 10px); /* Set width to 33% with some spacing */
+    margin: 5px; /* Add margin for spacing */
+    padding: 15px; /* Add padding for inner content */
+    border: 1px solid #ccc; /* Add borders for separation */
+    text-align: center; /* Center content */
+}
+
+/* Style individual elements within the flex container if needed */
+.flexContainer img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* My Work Section Constructed using CSS Grid */
+.myWork {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    grid-gap: 20px; /* Add grid gap for spacing */
+}
+
+.workGrid {
+    display: grid;
+    grid-template-areas:
+        "project1-image project1-info"
+        "project2-image project2-info";
+}
+
+.workGrid > div {
+    text-align: center; /* Center content */
+    padding: 20px; /* Add padding for inner content */
+    border: 1px solid #ccc; /* Add borders for separation */
+}
+
+/* Style individual elements within the grid container if needed */
+.workGrid img {
+    max-width: 100%;
+    height: auto;
+}
