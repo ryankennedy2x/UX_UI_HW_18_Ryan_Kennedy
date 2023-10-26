@@ -1,35 +1,34 @@
-/* My UX Skills section coded using CSS flex */
 .mySkills {
     display: flex;
-    flex-direction: row; /* You can change this to 'column' if needed */
+    flex-direction: row;
     justify-content: space-between;
 }
 
 .flexContainer {
     display: flex;
-    width: 100%; /* Ensure it takes up the full width of the parent */
-    justify-content: space-between; /* Distribute space between children */
+    width: 100%;
+    justify-content: space-between;
 }
 
 .flexContainer > div {
-    flex: 0 0 calc(33% - 10px); /* Set width to 33% with some spacing */
-    margin: 5px; /* Add margin for spacing */
-    padding: 15px; /* Add padding for inner content */
-    border: 1px solid #ccc; /* Add borders for separation */
-    text-align: center; /* Center content */
+    flex: 0 0 calc(33% - 10px);
+    margin: 5px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
 }
 
-/* Style individual elements within the flex container if needed */
+
 .flexContainer img {
     max-width: 100%;
     height: auto;
 }
 
-/* My Work Section Constructed using CSS Grid */
+
 .myWork {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    grid-gap: 20px; /* Add grid gap for spacing */
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
 }
 
 .workGrid {
@@ -40,13 +39,38 @@
 }
 
 .workGrid > div {
-    text-align: center; /* Center content */
-    padding: 20px; /* Add padding for inner content */
-    border: 1px solid #ccc; /* Add borders for separation */
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
 }
 
-/* Style individual elements within the grid container if needed */
+
 .workGrid img {
     max-width: 100%;
     height: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .mySkills .flexContainer {
+        flex-direction: column;
+    }
+
+    .mySkills .flexContainer > div {
+        flex: 0 0 100%;
+    }
+    .myWork .workGrid {
+        display: grid;
+        grid-template-areas:
+            "project1-image"
+            "project1-info"
+            "project2-image"
+            "project2-info";
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+    }
+    
+    .myWork .workGrid > div {
+        padding: 15px;
+        border: 1px solid #ccc;
+    }
 }
